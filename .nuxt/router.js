@@ -15,7 +15,6 @@ const Settings = () => import('~/pages/settings/index').then(m => m.default || m
 const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.default || m)
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
-const Employee = () => import('~/pages/Employee/index').then(m => m.default || m)
 const routes = [
   { path: '/', name: 'welcome', component: Welcome },
   { path: '/home', name: 'home', component: Home },
@@ -29,8 +28,7 @@ const routes = [
     { path: '', redirect: { name: 'settings.profile' }},
     { path: 'profile', name: 'settings.profile', component: SettingsProfile },
     { path: 'password', name: 'settings.password', component: SettingsPassword }
-  ] },
-  { path: '/Employee', name: 'Employee', component: Employee },
+  ] }
 ]
 
 const scrollBehavior = (to, from, savedPosition) => {
