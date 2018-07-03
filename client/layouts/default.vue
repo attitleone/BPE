@@ -1,33 +1,45 @@
 <template>
   <div class="app">
-    <AppHeader/>
+    <!-- <AppHeader/>
     <div class="app-body">
       <Sidebar :navItems="nav"/>
-      <main class="main">
-        <breadcrumb :list="list"/>
-        <div class="container-fluid">
+      <main class="main"> -->
+        <!-- <breadcrumb :list="list"/> -->
+        <!-- <div class="container-fluid">
           <nuxt />
         </div>
-      </main>
+      </main> -->
       <!--<AppAside/>-->
+    <!-- </div>
+    <AppFooter/> -->
+      <div id="wrapper">
+    <Sidebar :navItems="nav"/>
+    <div id="page-wrapper" class="gray-bg">
+      <AppHeader/>
+      <!-- <nuxt /> -->
+      <div class="wrapper wrapper-content animated fadeInRight">
+        <nuxt />
+      </div>
+      <AppFooter/>
     </div>
-    <AppFooter/>
   </div>
+</div>
 </template>
 
 <script>
   // import nav from './menu' 
   import { mapGetters,mapActions } from 'vuex'
-  import { Header as AppHeader, Sidebar, Footer as AppFooter, Breadcrumb } from '~/components/'
+  // import { Header as AppHeader, Sidebar, Footer as AppFooter, Breadcrumb } from '~/components/'
+  import { Header as AppHeader, Sidebar, Footer as AppFooter } from '~/components/'
 
   export default {
     name: 'full',
-     middleware: 'menu',
+     middleware:  ['auth', 'menu'],
     components: {
       AppHeader,
       Sidebar,
-      AppFooter,
-      Breadcrumb
+      AppFooter
+      // Breadcrumb
     },
     data () {
       return {
@@ -36,8 +48,7 @@
     },
     computed: {
       ...mapGetters({
-          nav: 'menu/items',
-          // items: 'auth/items'
+          nav: 'menu/items'
       }),
       name () {
         return this.$route.name

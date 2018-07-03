@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+// import Resource from './static/Resource'
 Vue.use(Router)
 
 const Home = () => import('~/pages/home').then(m => m.default || m)
@@ -16,6 +16,7 @@ const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.def
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
 const Employee = () => import('~/pages/Employee/index').then(m => m.default || m)
+const AddEmployee = () => import('~/pages/Employee/Add').then(m => m.default || m)
 
 const routes = [
   { path: '/', name: 'welcome', component: Welcome },
@@ -32,7 +33,13 @@ const routes = [
     { path: 'password', name: 'settings.password', component: SettingsPassword }
   ] },
 
-  { path: '/Employee', name: 'Employee', component: Employee }
+  { path: '/Employee', component: Employee, children: [
+    // { path: '', redirect: { name: 'Employee' }},
+    // { path: '', name: 'Employee', component: Employee },
+    { path: 'Add', name: 'Employee.Add', component: AddEmployee }
+    // { path: 'password', name: 'settings.password', component: SettingsPassword }
+  ] }
+  // { path: '/Employee', name: 'พนักงาน', component: Employee }
 ]
 
 const scrollBehavior = (to, from, savedPosition) => {

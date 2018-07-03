@@ -1,99 +1,102 @@
 <template>
-  <div class="row">
-    <div class="col-lg-8 m-auto">
-      <card :title="$t('register')">
-        <form @submit.prevent="register" @keydown="form.onKeydown($event)">
-          <!-- Name -->
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label text-md-right">{{ $t('name') }}</label>
-            <div class="col-md-7">
-              <input v-model="form.name" type="text" name="name" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('name') }">
-              <has-error :form="form" field="name"/>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label text-md-right">{{ $t('email') }}</label>
-            <div class="col-md-7">
-              <input v-model="form.email" type="email" name="email" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('email') }">
-              <has-error :form="form" field="email"/>
-            </div>
-          </div>
-
-          <!-- Password -->
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label text-md-right">{{ $t('password') }}</label>
-            <div class="col-md-7">
-              <input v-model="form.password" type="password" name="password" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('password') }">
-              <has-error :form="form" field="password"/>
-            </div>
-          </div>
-
-          <!-- Password Confirmation -->
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label text-md-right">{{ $t('confirm_password') }}</label>
-            <div class="col-md-7">
-              <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
-              <has-error :form="form" field="password_confirmation"/>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="col-md-7 offset-md-3 d-flex">
-              <!-- Submit Button -->
-              <v-button :loading="form.busy">
-                {{ $t('Employee') }}
-              </v-button>
-
-              <!-- GitHub Login Button -->
-              <login-with-github/>
-            </div>
-          </div>
-        </form>
+  <!-- <div class="row">
+    <div class="col-md-3">
+      <card :title="$t('Employee')" class="settings-card">
+        <ul class="nav flex-column nav-pills">
+          <li v-for="tab in tabs" class="nav-item">
+            <router-link :to="{ name: tab.route }" class="nav-link" active-class="active">
+              <fa :icon="tab.icon" fixed-width/>
+              {{ tab.name }}
+            </router-link>
+          </li>
+        </ul>
       </card>
     </div>
-  </div>
+
+    <div class="col-md-9">
+      <transition name="fade" mode="out-in">
+        <nuxt />
+      </transition>
+    </div>
+  </div> -->
+<div>
+              <b-card :title="$t('Employee')" bg-variant="Info" text-variant="dark">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="order_id">Order ID</label>
+                            <input type="text" id="order_id" name="order_id" value="" placeholder="Order ID" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="status">Order status</label>
+                            <input type="text" id="status" name="status" value="" placeholder="Status" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="customer">Customer</label>
+                            <input type="text" id="customer" name="customer" value="" placeholder="Customer" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="date_added">Date added</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date_added" type="text" class="form-control" value="03/04/2014">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="date_modified">Date modified</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date_modified" type="text" class="form-control" value="03/06/2014">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="amount">Amount</label>
+                            <input type="text" id="amount" name="amount" value="" placeholder="Amount" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+              
+              </b-card>
+</div>
+
 </template>
 
 <script>
-import Form from 'vform'
-
 export default {
-  head () {
-    return { title: this.$t('Employee') }
-  },
+  middleware: 'auth',
 
-  data: () => ({
-    form: new Form({
-      name: '',
-      email: '',
-      password: '',
-      password_confirmation: ''
-    })
-  }),
-
-  methods: {
-    async register () {
-      // Register the user.
-      const { data } = await this.form.post('/register')
-
-      // Log in the user.
-      const { data: { token }} = await this.form.post('/login')
-
-      // Save the token.
-      this.$store.dispatch('auth/saveToken', { token })
-
-      // Update the user.
-      await this.$store.dispatch('auth/updateUser', { user: data })
-
-      // Redirect home.
-      this.$router.push({ name: 'home' })
+  computed: {
+    tabs () {
+      return [
+        {
+          icon: 'user',
+          name: this.$t('profile'),
+          route: 'Employee.Add'
+        },
+        // {
+        //   icon: 'lock',
+        //   name: this.$t('password'),
+        //   route: 'settings.password'
+        // }
+      ]
     }
   }
 }
 </script>
+
+<style>
+.settings-card .card-body {
+  padding: 0;
+}
+</style>

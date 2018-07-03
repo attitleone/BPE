@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+const webpack = require('webpack')
 const polyfills = [
   'Promise',
   'Object.assign',
@@ -13,7 +13,7 @@ const polyfills = [
 ]
 
 module.exports = {
-// mode: 'spa',
+  mode: 'spa',
   srcDir: __dirname,
 
   env: {
@@ -46,11 +46,15 @@ module.exports = {
   },
 
   css: [
-
     { src: 'flag-icon-css/css/flag-icon.min.css' },
     { src: 'font-awesome/css/font-awesome.min.css' },
     { src: 'simple-line-icons/css/simple-line-icons.css' },
-    { src: '~assets/scss/style.scss', lang: 'scss' }
+    // { src: 'animate.css/animate.css' },
+    { src: '~assets/css/animate.css', lang: 'css' },
+    { src: '~assets/css/bootstrap.css', lang: 'css' },
+    // { src: '~assets/css/style.css', lang: 'css' }
+    { src: '~assets/less/style.less', lang: 'less' }
+    // { src: 'bootstrap/scss/bootstrap.scss' }
   ],
 
   plugins: [
@@ -60,7 +64,15 @@ module.exports = {
     '~plugins/axios',
     '~plugins/fontawesome',
     '~plugins/nuxt-client-init',
-    // { src: '~plugins/bootstrap', ssr: false }
+    // { src: '~plugins/jquery', ssr: false },
+    { src: '~plugins/metisMenu', ssr: true },
+    { src: '~/assets/js/jquery-3.1.1.min.js', ssr: false },
+    { src: '~plugins/jquery-scroll', ssr: false },
+    // { src: '~plugins/bootstrap.js', ssr: false },
+    { src: '~/assets/js/bootstrap.js', ssr: false },
+    { src: '~/assets/js/inspinia', ssr: false },
+    { src: '~/assets/js/pace/pace.min.js', ssr: false },
+    // { src: '~/assets/js/metisMenu/jquery.metisMenu.js', ssr: false },
     { src: '~plugins/bootstrap-vue.js', ssr: true }
   ],
 
@@ -70,6 +82,14 @@ module.exports = {
   ],
 
   build: {
-    extractCSS: true
+    extractCSS: true,
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ]
   }
 }

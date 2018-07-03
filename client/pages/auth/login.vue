@@ -119,7 +119,8 @@
 
 <script>
 import Form from 'vform'
-import { CompanyName } from '../../static/Helper'
+// import { CompanyName } from '../../static/Resource'
+import { Common } from '../../static/Resource'
 export default {
   head () {
     return { title: this.$t('login') }
@@ -131,7 +132,7 @@ export default {
       password: ''
     }),
     remember: false,
-    CompanyName: CompanyName
+    CompanyName: Common.CompanyName
   }),
 
   methods: {

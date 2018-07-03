@@ -5,4 +5,3 @@ export default async ({ store }) => {
   const Menu = await getMenu(items)
   store.dispatch('menu/setmenu', Menu)
 }
-

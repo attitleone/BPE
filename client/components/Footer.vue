@@ -5,12 +5,12 @@
   </footer>
 </template>
 <script>
-  import { CompanyName, Year } from '../static/Helper'
+  import { Common } from '../static/Resource'
 export default {
   name: 'c-footer',
   data: () => ({
-      year: Year,
-      CompanyName: CompanyName
+      year: Common.Year,
+      CompanyName: Common.CompanyName
   })
 }
 </script>

@@ -1,12 +1,15 @@
 <template>
   <div class="app flex-row align-items-center">
     <div class="container">
-      <b-row class="justify-content-center">
-        <b-card-group>
-          <b-card-body>
-          <b-row class="justify-content-center">
+      <!-- <b-row class="justify-content-center"> -->
+        <div class="row text-center">
+        <!-- <b-card-group> -->
+          <div class="card">
+          <!-- <b-card-body> -->
+            <div class="card-body">
+          <div class="row text-center">
             <app-logo/>
-          </b-row>
+          </div>
 
 
 
@@ -16,9 +19,12 @@
       <h2 class="text-center subtitle">
       {{CompanyName}}
       </h2>
-          </b-card-body>
-        </b-card-group>
-      </b-row>
+          <!-- </b-card-body> -->
+          </div>
+          </div>
+        <!-- </b-card-group> -->
+      <!-- </b-row> -->
+        </div>
     </div>
   </div>
 
@@ -27,11 +33,11 @@
 
 <script>
   import AppLogo from '~/components/AppLogo.vue'
-  import { CompanyName } from '../static/Helper'
+  import { Common } from '../static/Resource'
 export default {
   middleware: 'auth',
   data: () => ({
-      CompanyName: CompanyName
+      CompanyName: Common.CompanyName
   }),
   components: {
       AppLogo
