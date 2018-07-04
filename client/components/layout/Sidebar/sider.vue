@@ -73,54 +73,6 @@
             </ul>
           </li> -->
 
-          <li>
-            <a href="#">
-              <i class="fa fa-sitemap"></i>
-              <span class="nav-label">Menu Levels </span>
-              <span class="fa arrow"></span>
-            </a>
-            <ul class="nav nav-second-level collapse">
-              <li>
-                <a href="#">Third Level
-                  <span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-third-level collapse">
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                  <li>
-                    <a href="#">Third Level Item</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Second Level Item</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="css_animation.html">
-              <i class="fa fa-magic"></i>
-              <span class="nav-label">CSS Animations </span>
-              <span class="label label-info pull-right">62</span>
-            </a>
-          </li>
-          <li class="landing_link">
-            <a target="_blank" href="landing.html">
-              <i class="fa fa-star"></i>
-              <span class="nav-label">Landing Page</span>
-              <span class="label label-warning pull-right">NEW</span>
-            </a>
-          </li>
-          <li class="special_link">
-            <a href="package.html">
-              <i class="fa fa-database"></i>
-              <span class="nav-label">Package</span>
-            </a>
-          </li>
         </ul>
       </div>
     </nav>

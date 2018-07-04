@@ -1,5 +1,5 @@
 <template>
-  <div class="app flex-row align-items-center">
+  <!-- <div class="app flex-row align-items-center">
     <div class="container">
       <b-row class="justify-content-center">
         <b-col md="8">
@@ -27,9 +27,9 @@
                 </checkbox>
                 </b-input-group>
                 <b-row>
-                  <b-col cols="6">
+                  <b-col cols="6"> -->
                     <!--<b-button variant="primary" class="px-4">Login</b-button>-->
-                    <v-button :loading="form.busy">
+                    <!-- <v-button :loading="form.busy">
                     {{ $t('login') }}
                     </v-button>
                   </b-col>
@@ -49,16 +49,46 @@
               <b-card-body class="text-center">
                 <div>
                   <h2>{{ CompanyName }}</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
                   <!--<b-button variant="primary" class="active mt-3">Register Now!</b-button>-->
-                </div>
+                <!-- </div>
               </b-card-body>
             </b-card>
           </b-card-group>
         </b-col>
       </b-row>
     </div>
-  </div>
+  </div> -->
+
+
+      <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">IN+</h1>
+
+            </div>
+            <h3>Welcome to IN+</h3>
+            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+            </p>
+            <p>Login in. To see it in action.</p>
+            <form class="m-t" role="form" action="index.html">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Username" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                <a href="#"><small>Forgot password?</small></a>
+                <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+            </form>
+            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+        </div>
+    </div>
 </template>
 
 <!--<template>-->
@@ -151,6 +181,12 @@ export default {
       // Redirect home.
       this.$router.push({ name: 'home' })
     }
-  }
+  },
 }
 </script>
+<style scoped>
+body{
+  background-color: #f3f3f4
+}
+</style>
+
