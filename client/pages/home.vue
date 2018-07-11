@@ -1,5 +1,6 @@
 <template>
-  <div class="app flex-row align-items-center">
+  <!-- <div class="app flex-row align-items-center"> -->
+  <div class="app flex-row align-items-center animated fadeInRight">
     <div class="container">
       <!-- <b-row class="justify-content-center"> -->
         <div class="row text-center">
@@ -44,6 +45,6 @@ export default {
   },
   head () {
       return { title: this.$t('home') }
-  }
+  },
 }
 </script>

@@ -39,7 +39,8 @@ module.exports = {
     ]
   },
 
-  loading: { color: '#42A5CC' },
+  // loading: { color: '#42A5CC' },
+  // loading: '~/components/loading.vue',
 
   router: {
     middleware: ['locale', 'check-auth']
@@ -49,6 +50,7 @@ module.exports = {
     { src: 'flag-icon-css/css/flag-icon.min.css' },
     { src: 'font-awesome/css/font-awesome.min.css' },
     { src: 'simple-line-icons/css/simple-line-icons.css' },
+    // { src: 'vue2-animate/src/sass/vue2-animate.scss' },
     // { src: 'animate.css/animate.css' },
     { src: '~assets/css/animate.css', lang: 'css' },
     { src: '~assets/css/bootstrap.css', lang: 'css' },
@@ -64,16 +66,16 @@ module.exports = {
     '~plugins/axios',
     '~plugins/fontawesome',
     '~plugins/nuxt-client-init',
-    // { src: '~plugins/jquery', ssr: false },
-    { src: '~plugins/metisMenu', ssr: true },
-    { src: '~/assets/js/jquery-3.1.1.min.js', ssr: false },
-    { src: '~plugins/jquery-scroll', ssr: false },
-    // { src: '~plugins/bootstrap.js', ssr: false },
-    { src: '~/assets/js/bootstrap.js', ssr: false },
-    { src: '~/assets/js/inspinia', ssr: false },
-    { src: '~/assets/js/pace/pace.min.js', ssr: false },
-    // { src: '~/assets/js/metisMenu/jquery.metisMenu.js', ssr: false },
-    { src: '~plugins/bootstrap-vue.js', ssr: true }
+    { src: '~plugins/jquery', ssr: true },
+    { src: '~plugins/metisMenu', ssr: false },
+    // { src: '~/assets/js/jquery-3.1.1.min.js', ssr: false },
+    { src: '~plugins/jquery-scroll', ssr: true }
+    // // { src: '~plugins/bootstrap.js', ssr: false },
+    // { src: '~/assets/js/bootstrap.js', ssr: false },
+    // { src: '~/assets/js/inspinia', ssr: true },
+    // { src: '~/assets/js/pace/pace.min.js', ssr: true }
+    // { src: '~/assets/js/metisMenu/jquery.metisMenu.js', ssr: false }
+    // { src: '~plugins/bootstrap-vue.js', ssr: true }
   ],
 
   modules: [

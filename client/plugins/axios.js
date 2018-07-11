@@ -58,6 +58,19 @@ export default ({ app, store, redirect }) => {
       })
     }
 
+    // if (status === 422) {
+    //   swal({
+    //     type: 'error',
+    //     // title: app.i18n.t('error_alert_title'),
+    //     title: 'ข้อมูลผิดพลาด',
+    //     // text: app.i18n.t('error_alert_text'),
+    //     text: 'Username หรือ Password ไม่ถูกต้อง กรุณาตรวจใหม่อีกครั้ง',
+    //     reverseButtons: true,
+    //     confirmButtonText: app.i18n.t('ok'),
+    //     cancelButtonText: app.i18n.t('cancel')
+    //   })
+    // }
+
     return Promise.reject(error)
   })
 }

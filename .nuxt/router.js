@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 // import Resource from './static/Resource'
 Vue.use(Router)
 
@@ -38,7 +39,7 @@ const routes = [
     // { path: '', name: 'Employee', component: Employee },
     { path: 'Add', name: 'Employee.Add', component: AddEmployee }
     // { path: 'password', name: 'settings.password', component: SettingsPassword }
-  ] }
+  ], name: 'Employee' }
   // { path: '/Employee', name: 'พนักงาน', component: Employee }
 ]
 

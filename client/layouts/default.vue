@@ -13,11 +13,13 @@
     <!-- </div>
     <AppFooter/> -->
       <div id="wrapper">
-    <Sidebar :navItems="nav"/>
+    <Sidebar :navItems="nav" />
     <div id="page-wrapper" class="gray-bg">
       <AppHeader/>
       <!-- <nuxt /> -->
-      <div class="wrapper wrapper-content animated fadeInRight">
+
+      <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+      <div class="wrapper wrapper-content">
         <nuxt />
       </div>
       <AppFooter/>
@@ -31,7 +33,7 @@
   import { mapGetters,mapActions } from 'vuex'
   // import { Header as AppHeader, Sidebar, Footer as AppFooter, Breadcrumb } from '~/components/'
   import { Header as AppHeader, Sidebar, Footer as AppFooter } from '~/components/'
-
+  import '~/assets/js/inspinia'
   export default {
     name: 'full',
      middleware:  ['auth', 'menu'],
@@ -56,7 +58,15 @@
       list () {
         return this.$route.matched
       }
-    }
+    },
+    beforeMount: () => {
+    // document.body.classList.remove('gray-bg')
+    
+    // document.getElementsByClassName('wrapper wrapper-content').classList.add('animated fadeInRight')
+    },
+    mounted: () => {
+      $('#side-menu').metisMenu()
+    },
   }
 </script>
 

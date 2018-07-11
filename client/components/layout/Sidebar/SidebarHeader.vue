@@ -1,10 +1,14 @@
 <template>
     <li class="nav-header">
             <div class="dropdown profile-element">
+              
               <span>
-                <!-- <img alt="image" class="img-circle " src="../../static/img/profile_small.jpg"> -->
-                  <img :src="user.photo_url" class="img-responsive img-circle" :alt="user.Email">
+                <!-- <img alt="image" class="img-circle " src="~static/img/profile_small.jpg"> -->
+                <router-link to="/home"> 
+                 <img :src="user.photo_url" class="img-responsive img-circle" :alt="user.Email">
+              </router-link>
               </span>
+              
               <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <span class="clear">
                   <span class="block m-t-xs">
@@ -33,8 +37,11 @@
             </div>
             <div class="logo-element">
               <!-- <img alt="image" class="img-circle" src="~static/img/profile_small.jpg"> -->
+              <!-- <img alt="image" class="img-responsive img-circle" src="~static/img/LogoBangpu.jpg"> -->
               <!-- <img :src="user.photo_url" class="img-responsive img-circle" :alt="user.Email"> -->
-              BPE
+              <router-link to="/home"> 
+                 BPE
+              </router-link>
             </div>
           </li>
 </template>

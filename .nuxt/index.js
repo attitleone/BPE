@@ -18,13 +18,9 @@ import nuxt_plugin_vform_f95cee7a from 'nuxt_plugin_vform_f95cee7a' // Source: .
 import nuxt_plugin_axios_fb9c9a02 from 'nuxt_plugin_axios_fb9c9a02' // Source: ..\\client\\plugins\\axios
 import nuxt_plugin_fontawesome_773d88fd from 'nuxt_plugin_fontawesome_773d88fd' // Source: ..\\client\\plugins\\fontawesome
 import nuxt_plugin_nuxtclientinit_37cfbfdf from 'nuxt_plugin_nuxtclientinit_37cfbfdf' // Source: ..\\client\\plugins\\nuxt-client-init
-import nuxt_plugin_metisMenu_555cfc8e from 'nuxt_plugin_metisMenu_555cfc8e' // Source: ..\\client\\plugins\\metisMenu
-import nuxt_plugin_jquery311min_05b86908 from 'nuxt_plugin_jquery311min_05b86908' // Source: ..\\client\\assets\\js\\jquery-3.1.1.min.js (ssr: false)
-import nuxt_plugin_jqueryscroll_3eac0665 from 'nuxt_plugin_jqueryscroll_3eac0665' // Source: ..\\client\\plugins\\jquery-scroll (ssr: false)
-import nuxt_plugin_bootstrap_cd4c902c from 'nuxt_plugin_bootstrap_cd4c902c' // Source: ..\\client\\assets\\js\\bootstrap.js (ssr: false)
-import nuxt_plugin_inspinia_7ca61de0 from 'nuxt_plugin_inspinia_7ca61de0' // Source: ..\\client\\assets\\js\\inspinia (ssr: false)
-import nuxt_plugin_pacemin_5f6c3f45 from 'nuxt_plugin_pacemin_5f6c3f45' // Source: ..\\client\\assets\\js\\pace\\pace.min.js (ssr: false)
-import nuxt_plugin_bootstrapvue_84130e72 from 'nuxt_plugin_bootstrapvue_84130e72' // Source: ..\\client\\plugins\\bootstrap-vue.js
+import nuxt_plugin_jquery_59fa1596 from 'nuxt_plugin_jquery_59fa1596' // Source: ..\\client\\plugins\\jquery
+import nuxt_plugin_metisMenu_555cfc8e from 'nuxt_plugin_metisMenu_555cfc8e' // Source: ..\\client\\plugins\\metisMenu (ssr: false)
+import nuxt_plugin_jqueryscroll_3eac0665 from 'nuxt_plugin_jqueryscroll_3eac0665' // Source: ..\\client\\plugins\\jquery-scroll
 
 
 // Component: <no-ssr>
@@ -169,15 +165,11 @@ async function createApp (ssrContext) {
   if (typeof nuxt_plugin_axios_fb9c9a02 === 'function') await nuxt_plugin_axios_fb9c9a02(app.context, inject)
   if (typeof nuxt_plugin_fontawesome_773d88fd === 'function') await nuxt_plugin_fontawesome_773d88fd(app.context, inject)
   if (typeof nuxt_plugin_nuxtclientinit_37cfbfdf === 'function') await nuxt_plugin_nuxtclientinit_37cfbfdf(app.context, inject)
-  if (typeof nuxt_plugin_metisMenu_555cfc8e === 'function') await nuxt_plugin_metisMenu_555cfc8e(app.context, inject)
-  if (typeof nuxt_plugin_bootstrapvue_84130e72 === 'function') await nuxt_plugin_bootstrapvue_84130e72(app.context, inject)
+  if (typeof nuxt_plugin_jquery_59fa1596 === 'function') await nuxt_plugin_jquery_59fa1596(app.context, inject)
+  if (typeof nuxt_plugin_jqueryscroll_3eac0665 === 'function') await nuxt_plugin_jqueryscroll_3eac0665(app.context, inject)
   
   if (process.browser) { 
-    if (typeof nuxt_plugin_jquery311min_05b86908 === 'function') await nuxt_plugin_jquery311min_05b86908(app.context, inject)
-    if (typeof nuxt_plugin_jqueryscroll_3eac0665 === 'function') await nuxt_plugin_jqueryscroll_3eac0665(app.context, inject)
-    if (typeof nuxt_plugin_bootstrap_cd4c902c === 'function') await nuxt_plugin_bootstrap_cd4c902c(app.context, inject)
-    if (typeof nuxt_plugin_inspinia_7ca61de0 === 'function') await nuxt_plugin_inspinia_7ca61de0(app.context, inject)
-    if (typeof nuxt_plugin_pacemin_5f6c3f45 === 'function') await nuxt_plugin_pacemin_5f6c3f45(app.context, inject)
+    if (typeof nuxt_plugin_metisMenu_555cfc8e === 'function') await nuxt_plugin_metisMenu_555cfc8e(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

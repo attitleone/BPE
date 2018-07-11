@@ -19,8 +19,9 @@
       </transition>
     </div>
   </div> -->
-<div>
-              <b-card :title="$t('Employee')" bg-variant="Info" text-variant="dark">
+<!-- <div > -->
+<div class="animated fadeInRight">
+              <card :title="$t('Employee')" bg-variant="Info" text-variant="dark">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -65,9 +66,7 @@
                         </div>
                     </div>
                 </div>
-
-              
-              </b-card>
+              </card>
 </div>
 
 </template>

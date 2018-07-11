@@ -65,28 +65,47 @@
         <div>
             <div>
 
-                <h1 class="logo-name">IN+</h1>
+                <h1 class="logo-name">BPE</h1>
+                <!-- <img alt="image" class="img-circle" src="~static/img/LogoBangpu.jpg" height="20%" width="40%"> -->
 
             </div>
-            <h3>Welcome to IN+</h3>
-            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+            <h3>{{CompanyName}}</h3>
+            <p>
+              Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
-            <p>Login in. To see it in action.</p>
-            <form class="m-t" role="form" action="index.html">
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Username" required="">
+            <!-- <p>Login in. To see it in action.</p> -->
+            <!-- <form class="m-t" role="form" action="index.html"> -->
+              <form @submit.prevent="login" class="m-t" role="form" @keydown="form.onKeydown($event)">
+              <!-- <alert-error :form="form" message="There were some problems with your input."></alert-error> -->
+                <div class="form-group" :class="{ 'has-error': form.errors.has('email') }">
+                <has-error :form="form" field="email"/>
+                <input v-model="form.email" type="email" name="email" class="form-control"
+                :class="{ 'has-error': form.errors.has('email') }" placeholder="Username" >
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
-                </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                <a href="#"><small>Forgot password?</small></a>
-                <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+                <div class="form-group" :class="{ 'has-error': form.errors.has('password') }">
+                <has-error :form="form" field="password"/>
+                <input v-model="form.password" type="password" name="password" class="form-control"
+                 placeholder="Password" >
+                </div>
+                
+                  <checkbox v-model="remember" name="remember">
+                    {{ $t('remember_me') }}
+                  </checkbox>
+               
+
+                <!-- <button type="submit" class="btn btn-primary block full-width m-b">Login</button> -->
+              <!--&lt;!&ndash; Submit Button &ndash;&gt;-->
+              <v-button :loading="form.busy" class="btn btn-primary block full-width m-b">
+                {{ $t('login') }}
+              </v-button>
+              
+                <!-- <a href="#"><small>Forgot password?</small></a> -->
+                <!-- <p class="text-muted text-center"><small>หากท่านลืมรหัสผ่าน กรุณาติดต่อฝ่ายที่เกี่ยวข้อง</small></p> -->
+                <!-- <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a> -->
             </form>
-            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+            <p class="m-t"> <small>* หากท่านลืมรหัสผ่าน กรุณาติดต่อฝ่ายที่เกี่ยวข้อง</small> </p>
         </div>
     </div>
 </template>
@@ -149,7 +168,6 @@
 
 <script>
 import Form from 'vform'
-// import { CompanyName } from '../../static/Resource'
 import { Common } from '../../static/Resource'
 export default {
   head () {
@@ -182,11 +200,11 @@ export default {
       this.$router.push({ name: 'home' })
     }
   },
+  mounted: () => {
+    // document.body.classList.add('gray-bg')
+  },
 }
 </script>
 <style scoped>
-body{
-  background-color: #f3f3f4
-}
 </style>
 

@@ -1,1 +1,7 @@
+// import 'jquery'
+// import '~/assets/js/jquery-3.1.1.min.js'
+// import '~/assets/js/bootstrap.js'
 import 'jquery'
+import 'bootstrap'
+// import '~/assets/js/inspinia'
+// import '~/assets/js/pace/pace.min.js'

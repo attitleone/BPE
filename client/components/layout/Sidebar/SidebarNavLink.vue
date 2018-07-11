@@ -6,12 +6,19 @@
     </a>
   </div> -->
   <!-- <div v-else> -->
-    <router-link :to="url" :class="classList">
-      <i :class="icon"></i> 
+    <router-link :to="url" :class="classList" >
+      <!-- <a href="#" @click="handleClick"> -->
+        <i :class="icon"></i> 
       <span class="nav-label">{{name}} </span>
-      <b-badge v-if="badge && badge.text" :variant="badge.variant">{{badge.text}}</b-badge>
+      <!-- </a> -->
+      
+      <!-- <b-badge v-if="badge && badge.text" :variant="badge.variant">{{badge.text}}</b-badge> -->
     </router-link>
   <!-- </div> -->
+
+                    <!-- <a href="metrics.html" @click="handleClick"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a> -->
+
+  
 </template>
 
 <script>
