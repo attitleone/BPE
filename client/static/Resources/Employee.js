@@ -1,0 +1,18 @@
+module.exports = {
+  Resources: {
+    Views: {
+      Emp: 'พนักงาน',
+      Emp_ID: 'รหัสพนักงาน',
+      Emp_FirstName: 'ชื่อพนักงาน',
+      Emp_LastName: 'นามสกุลพนักงาน',
+      Emp_Status: 'สถานะพนักงาน'
+    },
+    Placeholders: {
+      Emp: 'กรอกพนักงาน',
+      Emp_ID: 'กรอกรหัสพนักงาน',
+      Emp_FirstName: 'กรอกชื่อพนักงาน',
+      Emp_LastName: 'กรอกนามสกุลพนักงาน',
+      Emp_Status: 'เลือกสถานะพนักงาน'
+    }
+  }
+}

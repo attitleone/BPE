@@ -12,10 +12,16 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return response()->json(['test' => '1']);
+        $department = new department;
+         $data = $request;
+        return response()->json([
+            'result'  => $department->get(),
+            'total' => $department->get()->count(),
+            'data' => $request->Emp_ID
+        ]);
     }
 
     /**
@@ -37,6 +43,19 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         //
+        $department = new Department;
+        $data = $department
+        ->when($request->Emp_ID, function ($query) use ($request) {
+            return $query->where('DepID', $request->Emp_ID);
+        })
+        ->when($request->Emp_FirstName, function ($query) use ($request) {
+            return $query->where('DepName', $request->Emp_FirstName);
+        })
+        ->get();
+        return response()->json([
+            'result'  => $data,
+            'total'  => $data->count()
+        ]);
     }
 
     /**
@@ -48,6 +67,12 @@ class DepartmentController extends Controller
     public function show(department $department)
     {
         //
+       $result = $department->where('DeleteFlag', 0)
+                            ->get();
+        return response()->json([
+                            'result'  => $result,
+                            'total'  => $result->count()
+                            ]);
     }
 
     /**

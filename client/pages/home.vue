@@ -3,7 +3,7 @@
   <div class="app flex-row align-items-center animated fadeInRight">
     <div class="container">
       <!-- <b-row class="justify-content-center"> -->
-        <div class="row text-center">
+        <div class="row middle-box text-center">
         <!-- <b-card-group> -->
           <div class="card">
           <!-- <b-card-body> -->
@@ -14,12 +14,12 @@
 
 
 
-      <h1 class="text-center title">
+      <h2 class="text-center title">
       Welcome to
-      </h1>
-      <h2 class="text-center subtitle">
-      {{CompanyName}}
       </h2>
+      <h3 class="text-center subtitle">
+      {{CompanyName}}
+      </h3>
           <!-- </b-card-body> -->
           </div>
           </div>
@@ -34,7 +34,7 @@
 
 <script>
   import AppLogo from '~/components/AppLogo.vue'
-  import { Common } from '../static/Resource'
+  import { Common } from '../static/Resources'
 export default {
   middleware: 'auth',
   data: () => ({
@@ -46,5 +46,6 @@ export default {
   head () {
       return { title: this.$t('home') }
   },
+
 }
 </script>

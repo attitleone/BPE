@@ -69,7 +69,7 @@
                 <!-- <img alt="image" class="img-circle" src="~static/img/LogoBangpu.jpg" height="20%" width="40%"> -->
 
             </div>
-            <h3>{{CompanyName}}</h3>
+            <h3>{{ CompanyName }}</h3>
             <p>
               Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
@@ -168,7 +168,7 @@
 
 <script>
 import Form from 'vform'
-import { Common } from '../../static/Resource'
+import { Common } from '../../static/Resources'
 export default {
   head () {
     return { title: this.$t('login') }
@@ -200,9 +200,7 @@ export default {
       this.$router.push({ name: 'home' })
     }
   },
-  mounted: () => {
-    // document.body.classList.add('gray-bg')
-  },
+
 }
 </script>
 <style scoped>

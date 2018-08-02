@@ -1,5 +1,5 @@
 <template>
-  <div class="simple-layout d-flex align-items-center  m-0 bg-white">
+  <div class="simple-layout d-flex align-items-center  m-0 gray-bg">
     <!-- <div class="gray-bg"> -->
     <nuxt/>
     <!-- </div> -->

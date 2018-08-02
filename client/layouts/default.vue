@@ -1,26 +1,21 @@
 <template>
   <div class="app">
-    <!-- <AppHeader/>
-    <div class="app-body">
-      <Sidebar :navItems="nav"/>
-      <main class="main"> -->
-        <!-- <breadcrumb :list="list"/> -->
-        <!-- <div class="container-fluid">
-          <nuxt />
-        </div>
-      </main> -->
-      <!--<AppAside/>-->
-    <!-- </div>
-    <AppFooter/> -->
       <div id="wrapper">
     <Sidebar :navItems="nav" />
     <div id="page-wrapper" class="gray-bg">
       <AppHeader/>
       <!-- <nuxt /> -->
-
-      <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
-      <div class="wrapper wrapper-content">
-        <nuxt />
+            <div class="row wrapper border-bottom white-bg page-heading" v-if="CheckCurrentUrl">
+                 <div class="col-lg-10">
+                     <h2>{{ nameTH }}</h2>
+                     <breadcrumb :list="list" />
+                 </div>
+                 <div class="col-lg-2"></div>
+            </div>
+      <div class="wrapper wrapper-content animated fadeInRight">
+  <transition name="fade">
+ <nuxt />
+  </transition>
       </div>
       <AppFooter/>
     </div>
@@ -29,22 +24,23 @@
 </template>
 
 <script>
+
   // import nav from './menu' 
   import { mapGetters,mapActions } from 'vuex'
-  // import { Header as AppHeader, Sidebar, Footer as AppFooter, Breadcrumb } from '~/components/'
-  import { Header as AppHeader, Sidebar, Footer as AppFooter } from '~/components/'
-  import '~/assets/js/inspinia'
+  import { Header as AppHeader, Sidebar, Footer as AppFooter, Breadcrumb } from '~/components/'
+  // import '~/assets/js/inspinia'
   export default {
     name: 'full',
      middleware:  ['auth', 'menu'],
     components: {
       AppHeader,
       Sidebar,
-      AppFooter
-      // Breadcrumb
+      AppFooter,
+      Breadcrumb
     },
     data () {
       return {
+        show: true
         // nav: nav.items
       }
     },
@@ -57,25 +53,19 @@
       },
       list () {
         return this.$route.matched
+      },
+      nameTH () {
+        return this.$route.meta.nameTH
+      },
+      CheckCurrentUrl () {
+        if(this.name === 'home'){
+          return false
+        }
+        return true
       }
     },
-    beforeMount: () => {
-    // document.body.classList.remove('gray-bg')
-    
-    // document.getElementsByClassName('wrapper wrapper-content').classList.add('animated fadeInRight')
-    },
-    mounted: () => {
+    mounted ()  {
       $('#side-menu').metisMenu()
     },
   }
 </script>
-
-
-// import Navbar from '~/components/Navbar'
-//
-// export default {
-//   components: {
-//     Navbar
-//   }
-// }
-

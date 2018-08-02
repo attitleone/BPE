@@ -14,15 +14,17 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => 'auth:api'], function () {
+    //Auth
     Route::post('logout', 'Auth\LoginController@logout');
     Route::get('user', 'UserController@index');
-    // Route::get('/user', function (Request $request) {
-    //     return response()->json(['user' => $request->user()->RolePID]);
-    //     // return $request->user();
-    // });
 
+    //Setting
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
+
+    //Department
+    Route::get('department', 'DepartmentController@show');
+    Route::post('department', 'DepartmentController@store');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
@@ -35,5 +37,3 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('oauth/{provider}', 'Auth\OAuthController@redirectToProvider');
     Route::get('oauth/{provider}/callback', 'Auth\OAuthController@handleProviderCallback')->name('oauth.callback');
 });
-
-Route::get('department', 'DepartmentController@index');

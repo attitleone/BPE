@@ -36,11 +36,11 @@ module.exports = {
     ],
     script: [
       { src: `https://cdn.polyfill.io/v2/polyfill.min.js?features=${polyfills.join(',')}` }
+      // { src: `https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js` }
     ]
   },
 
-  // loading: { color: '#42A5CC' },
-  // loading: '~/components/loading.vue',
+  loading: { color: '#1ab394' },
 
   router: {
     middleware: ['locale', 'check-auth']
@@ -52,27 +52,33 @@ module.exports = {
     { src: 'simple-line-icons/css/simple-line-icons.css' },
     // { src: 'vue2-animate/src/sass/vue2-animate.scss' },
     // { src: 'animate.css/animate.css' },
+    { src: 'vue2-datatable-component/dist/min.css' },
     { src: '~assets/css/animate.css', lang: 'css' },
     { src: '~assets/css/bootstrap.css', lang: 'css' },
+    { src: 'bootstrap-datepicker/dist/css/bootstrap-datepicker3.css' },
     // { src: '~assets/css/style.css', lang: 'css' }
     { src: '~assets/less/style.less', lang: 'less' }
-    // { src: 'bootstrap/scss/bootstrap.scss' }
+    // { src: 'bootstrap/less/bootstrap.less', lang: 'less' }
   ],
 
   plugins: [
     '~components/global',
+    // '~components/Datatable',
     '~plugins/i18n',
     '~plugins/vform',
     '~plugins/axios',
     '~plugins/fontawesome',
     '~plugins/nuxt-client-init',
-    { src: '~plugins/jquery', ssr: true },
-    { src: '~plugins/metisMenu', ssr: false },
+    { src: '~plugins/jquery' },
+    { src: '~plugins/metisMenu' },
     // { src: '~/assets/js/jquery-3.1.1.min.js', ssr: false },
-    { src: '~plugins/jquery-scroll', ssr: true }
-    // // { src: '~plugins/bootstrap.js', ssr: false },
-    // { src: '~/assets/js/bootstrap.js', ssr: false },
-    // { src: '~/assets/js/inspinia', ssr: true },
+    { src: '~plugins/jquery-scroll' },
+    { src: '~plugins/bootstrap.js' },
+    { src: '~plugins/vue-datatable.js' },
+    { src: '~plugins/datepicker.js', ssr: false }
+    // { src: 'bootstrap-datepicker/js/bootstrap-datepicker.js', ssr: false }
+    // { src: '~plugins/boostrap-date', ssr: true }
+    // { src: '~/assets/js/bootstrap.js', ssr: false }
     // { src: '~/assets/js/pace/pace.min.js', ssr: true }
     // { src: '~/assets/js/metisMenu/jquery.metisMenu.js', ssr: false }
     // { src: '~plugins/bootstrap-vue.js', ssr: true }
@@ -92,6 +98,9 @@ module.exports = {
         jQuery: 'jquery',
         'window.jQuery': 'jquery'
       })
+    ],
+    vendor: [
+      '~/assets/js/inspinia.js'
     ]
   }
 }

@@ -7,9 +7,13 @@ import '..\\node_modules\\font-awesome\\css\\font-awesome.min.css'
 
 import '..\\node_modules\\simple-line-icons\\css\\simple-line-icons.css'
 
+import '..\\node_modules\\vue2-datatable-component\\dist\\min.css'
+
 import '..\\client\\assets\\css\\animate.css'
 
 import '..\\client\\assets\\css\\bootstrap.css'
+
+import '..\\node_modules\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.css'
 
 import '..\\client\\assets\\less\\style.less'
 

@@ -94,10 +94,8 @@
                             <template>
   <div>
     <no-ssr>
-<datatable v-bind="$data" />
+      <datatable v-bind="$data" />
     </no-ssr>
-    <!-- <code>query: {{ query }}</code> -->
-    
   </div>
 </template>
                         </div>
@@ -110,10 +108,8 @@
 
 <script>
 import Form from 'vform'
-import thFilter from '~/components/Datatable/th-Filter'
 import { Employee, Common } from '~/static/Resources'
 export default {
-  thFilter,
   middleware: 'auth',
   props: ['row'],
   data: () => ({

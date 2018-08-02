@@ -1,6 +1,6 @@
 <template>
     <div class="row border-bottom">
-      <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+      <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
           <!-- <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#" ><i class="fa fa-bars"></i> </a> -->
               <button class="navbar-minimalize minimalize-styl-2 btn btn-primary" type="button" @click="sidebarToggle">
@@ -139,34 +139,6 @@
         msg: 'Welcome to Your Vue.js App'
       }
     },
-    // mounted: ()=> {
-    //   $('.navbar-minimalize').on('click', function (event) {
-    //     event.preventDefault()
-    //     $('body').toggleClass('mini-navbar')
-    //     SmoothlyMenu()
-    //   })
-    //   function SmoothlyMenu () {
-    //     if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
-    //           // Hide menu in order to smoothly turn on when maximize menu
-    //       $('#side-menu').hide()
-    //           // For smoothly turn on menu
-    //       setTimeout(
-    //               function () {
-    //                 $('#side-menu').fadeIn(400)
-    //               }, 200)
-    //     } else if ($('body').hasClass('fixed-sidebar')) {
-    //       $('#side-menu').hide()
-    //       setTimeout(
-    //         function () {
-    //           $('#side-menu').fadeIn(400)
-    //         }, 100
-    //       )
-    //     } else {
-    //       // Remove all inline style from jquery fadeIn function to reset menu state
-    //       $('#side-menu').removeAttr('style')
-    //     }
-    //   }
-    // },
         methods: {
       sidebarToggle (e) {
         e.preventDefault()

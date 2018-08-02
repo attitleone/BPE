@@ -39,7 +39,7 @@ const routes = [
     // { path: '', name: 'Employee', component: Employee },
     { path: 'Add', name: 'Employee.Add', component: AddEmployee }
     // { path: 'password', name: 'settings.password', component: SettingsPassword }
-  ], name: 'Employee' }
+  ], name: 'Employee', meta: { nameTH: 'พนักงาน' }}
   // { path: '/Employee', name: 'พนักงาน', component: Employee }
 ]
 

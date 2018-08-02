@@ -19,8 +19,11 @@ import nuxt_plugin_axios_fb9c9a02 from 'nuxt_plugin_axios_fb9c9a02' // Source: .
 import nuxt_plugin_fontawesome_773d88fd from 'nuxt_plugin_fontawesome_773d88fd' // Source: ..\\client\\plugins\\fontawesome
 import nuxt_plugin_nuxtclientinit_37cfbfdf from 'nuxt_plugin_nuxtclientinit_37cfbfdf' // Source: ..\\client\\plugins\\nuxt-client-init
 import nuxt_plugin_jquery_59fa1596 from 'nuxt_plugin_jquery_59fa1596' // Source: ..\\client\\plugins\\jquery
-import nuxt_plugin_metisMenu_555cfc8e from 'nuxt_plugin_metisMenu_555cfc8e' // Source: ..\\client\\plugins\\metisMenu (ssr: false)
+import nuxt_plugin_metisMenu_555cfc8e from 'nuxt_plugin_metisMenu_555cfc8e' // Source: ..\\client\\plugins\\metisMenu
 import nuxt_plugin_jqueryscroll_3eac0665 from 'nuxt_plugin_jqueryscroll_3eac0665' // Source: ..\\client\\plugins\\jquery-scroll
+import nuxt_plugin_bootstrap_0a49ca20 from 'nuxt_plugin_bootstrap_0a49ca20' // Source: ..\\client\\plugins\\bootstrap.js
+import nuxt_plugin_vuedatatable_235987d1 from 'nuxt_plugin_vuedatatable_235987d1' // Source: ..\\client\\plugins\\vue-datatable.js
+import nuxt_plugin_datepicker_0c042044 from 'nuxt_plugin_datepicker_0c042044' // Source: ..\\client\\plugins\\datepicker.js (ssr: false)
 
 
 // Component: <no-ssr>
@@ -166,10 +169,13 @@ async function createApp (ssrContext) {
   if (typeof nuxt_plugin_fontawesome_773d88fd === 'function') await nuxt_plugin_fontawesome_773d88fd(app.context, inject)
   if (typeof nuxt_plugin_nuxtclientinit_37cfbfdf === 'function') await nuxt_plugin_nuxtclientinit_37cfbfdf(app.context, inject)
   if (typeof nuxt_plugin_jquery_59fa1596 === 'function') await nuxt_plugin_jquery_59fa1596(app.context, inject)
+  if (typeof nuxt_plugin_metisMenu_555cfc8e === 'function') await nuxt_plugin_metisMenu_555cfc8e(app.context, inject)
   if (typeof nuxt_plugin_jqueryscroll_3eac0665 === 'function') await nuxt_plugin_jqueryscroll_3eac0665(app.context, inject)
+  if (typeof nuxt_plugin_bootstrap_0a49ca20 === 'function') await nuxt_plugin_bootstrap_0a49ca20(app.context, inject)
+  if (typeof nuxt_plugin_vuedatatable_235987d1 === 'function') await nuxt_plugin_vuedatatable_235987d1(app.context, inject)
   
   if (process.browser) { 
-    if (typeof nuxt_plugin_metisMenu_555cfc8e === 'function') await nuxt_plugin_metisMenu_555cfc8e(app.context, inject)
+    if (typeof nuxt_plugin_datepicker_0c042044 === 'function') await nuxt_plugin_datepicker_0c042044(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

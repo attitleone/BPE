@@ -8,9 +8,10 @@
 import Sidebar from './layout/Sidebar/sider.vue'
 import Header from './layout/topbar.vue'
 import Footer from './layout/footer.vue'
+import Breadcrumb from './layout/breadcrumb.vue'
 export {
   // Aside,
-  // Breadcrumb,
+  Breadcrumb,
   // Callout,
   Footer,
   Header,

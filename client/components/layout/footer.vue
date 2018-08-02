@@ -1,21 +1,21 @@
 <template>
   <div class="footer">
       <div class="pull-right">
-          让每一次通信都值得信赖，让安全创造价值
       </div>
       <div>
-          <strong>Copyright</strong> Eversec © 2014-2017
+          <strong>Copyright</strong> {{ CompanyName }} © {{ year }}
       </div>
   </div>
 </template>
 
 <script>
+import { Common } from '../../static/Resources'
 export default {
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  data: () => ({
+      msg: 'Welcome to Your Vue.js App',
+      year: Common.Year,
+      CompanyName: Common.CompanyName
+  }),
 }
 </script>
 
